@@ -211,6 +211,15 @@ header.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-
 .btn.ghost{border:1px solid rgba(241,233,218,.4);font-weight:600}
 .btn.ghost:hover{border-color:var(--gold);color:var(--gold2)}
 .btn.sm{min-height:44px;padding:0 20px;font-size:14px}
+.btn{max-width:100%;white-space:normal;text-align:center;line-height:1.35;overflow-wrap:anywhere}
+.acts{min-width:0;max-width:100%}
+.stats{min-width:0;gap:24px 28px}
+.stats div{min-width:0}
+.stats dd{overflow-wrap:anywhere}
+.secondary-link{font-size:13px;line-height:1.6;color:var(--mute);max-width:620px}
+.secondary-link a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
+.btn.outline-gold{border:1px solid var(--gold);color:var(--gold2);background:transparent}
+.btn.outline-gold:hover{background:rgba(217,168,78,.12);border-color:var(--gold2);transform:translateY(-1px)}
 .kick{font:12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
 .hero{display:flex;flex-wrap:wrap;gap:56px 64px;align-items:center;padding-block:80px 96px;background:radial-gradient(60% 75% at 80% 38%,rgba(130,36,24,.6),rgba(19,14,12,0) 70%),var(--bg)}
 .hero .txt{flex:1 1 460px;min-width:0;display:flex;flex-direction:column;gap:30px}
@@ -266,7 +275,7 @@ footer .who{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:8p
 footer b{font:400 22px var(--serif)}
 footer p{font-size:13px;line-height:1.7;color:var(--mute);max-width:620px}
 footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
-@media (max-width:520px){.steps li{flex-direction:column;gap:6px}.btn{width:100%;justify-content:center}section{padding-block:64px}.hero{padding-block:56px 72px}}
+@media (max-width:520px){.steps li{flex-direction:column;gap:6px}.btn{width:100%;max-width:100%;min-width:0;justify-content:center;padding:12px 16px;height:auto}.top{align-items:flex-start}.top>.btn{width:auto;max-width:100%}.stats{gap:20px 16px}.stats div{flex:1 1 28%;min-width:0}.stats dd{font-size:30px}section{padding-block:64px}.hero{padding-block:56px 72px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -376,6 +385,7 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
   <div class="who">
     <b>El Mejor Café · Andrei Navas</b>
     <p>Jaime Andrei Navas Meléndez es distribuidor independiente de Ganoexcel Colombia. Esta página es independiente y no es el sitio oficial de Ganoexcel. La compra, el pago, los precios, la disponibilidad y el envío se gestionan en la tienda de Ganoexcel Colombia. La información del producto debe verificarse en su etiqueta oficial.</p>
+    <p class="secondary-link">¿Quieres ser distribuidor independiente? Conoce las opciones de inscripción de Gano Excel Colombia y consulta los requisitos, precios y beneficios aplicables. <a href="/afiliacion.html">Afíliate ahora</a>.</p>
     <div class="meta">Hecho en Colombia · 2026</div>
   </div>
 </footer>
