@@ -134,5 +134,50 @@
   </section>
 </main>
 <footer><div class="wrap"><p><strong>El Mejor Café · Andrei Navas</strong></p><p>Contenido informativo independiente. Esta página no es propiedad ni representa oficialmente a Gano Excel S.A. Los nombres y marcas pertenecen a sus respectivos titulares. Los precios, requisitos, paquetes, políticas y disponibilidad pueden cambiar; consulta siempre la información oficial.</p><div class="footlinks"><a href="/">Comprar Ganocafe 3 en 1</a><a href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Portal oficial de afiliación ↗</a></div></div></footer>
+
+<script>
+(function () {
+  var preferenceKey = 'elmejorcafe-language-preference';
+  var autoKey = 'elmejorcafe-language-auto-done';
+  var path = window.location.pathname;
+  var isAffiliate = path.indexOf('afiliacion') !== -1;
+  var currentLanguage = (path === '/index-en.html' || path === '/afiliacion-en.html') ? 'en' : 'es';
+  var destinations = {
+    home: { es: '/', en: '/index-en.html' },
+    affiliate: { es: '/afiliacion.html', en: '/afiliacion-en.html' }
+  };
+  var pageType = isAffiliate ? 'affiliate' : 'home';
+
+  // A deliberate language selection always takes precedence over browser detection.
+  document.querySelectorAll('a[hreflang="es"], a[hreflang="en"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      try {
+        localStorage.setItem(preferenceKey, link.getAttribute('hreflang'));
+        sessionStorage.setItem(autoKey, '1');
+      } catch (e) {}
+    });
+  });
+
+  try {
+    var preferred = localStorage.getItem(preferenceKey);
+    if (preferred === 'es' || preferred === 'en') {
+      if (preferred !== currentLanguage) {
+        window.location.replace(destinations[pageType][preferred]);
+      }
+      return;
+    }
+
+    // Detect the browser language once per tab session; never bounce between pages.
+    if (sessionStorage.getItem(autoKey) === '1') return;
+    var browserLanguage = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+    var detected = browserLanguage.indexOf('en') === 0 ? 'en' :
+                   browserLanguage.indexOf('es') === 0 ? 'es' : null;
+    sessionStorage.setItem(autoKey, '1');
+    if (detected && detected !== currentLanguage) {
+      window.location.replace(destinations[pageType][detected]);
+    }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
