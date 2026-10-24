@@ -448,51 +448,7 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
   </div>
 </footer>
 
-<script>
-(function () {
-  var preferenceKey = 'elmejorcafe-language-preference';
-  var autoKey = 'elmejorcafe-language-auto-done';
-  var path = window.location.pathname;
-  var isAffiliate = path.indexOf('afiliacion') !== -1;
-  var currentLanguage = (path === '/index-en.html' || path === '/afiliacion-en.html') ? 'en' : 'es';
-  var destinations = {
-    home: { es: '/', en: '/index-en.html' },
-    affiliate: { es: '/afiliacion.html', en: '/afiliacion-en.html' }
-  };
-  var pageType = isAffiliate ? 'affiliate' : 'home';
+<!-- Language is selected explicitly with the EN/ES links; browser settings never override the user's choice. -->
 
-  // A deliberate language selection always takes precedence over browser detection.
-  document.querySelectorAll('a[hreflang="es"], a[hreflang="en"]').forEach(function (link) {
-    link.addEventListener('click', function () {
-      try {
-        localStorage.setItem(preferenceKey, link.getAttribute('hreflang'));
-        sessionStorage.setItem(autoKey, '1');
-      } catch (e) {}
-    });
-  });
-
-  try {
-    var preferred = localStorage.getItem(preferenceKey);
-    if (preferred === 'es' || preferred === 'en') {
-      if (preferred !== currentLanguage) {
-        window.location.replace(destinations[pageType][preferred]);
-      }
-      return;
-    }
-
-    // Automatic browser-language routing is limited to the root homepage.
-    // Keep explicit language URLs crawlable and let visitors switch manually.
-    if (path !== '/' && path !== '/index.html') return;
-    if (sessionStorage.getItem(autoKey) === '1') return;
-    var browserLanguage = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-    var detected = browserLanguage.indexOf('en') === 0 ? 'en' :
-                   browserLanguage.indexOf('es') === 0 ? 'es' : null;
-    sessionStorage.setItem(autoKey, '1');
-    if (detected && detected !== currentLanguage) {
-      window.location.replace(destinations[pageType][detected]);
-    }
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>
