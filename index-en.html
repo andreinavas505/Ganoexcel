@@ -290,7 +290,7 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
 
 <header class="top wrap">
   <div class="brand"><b>El Mejor Café</b><span>Andrei Navas · Independent Gano Excel distributor</span></div>
-  <a class="btn ghost sm" href="/" lang="es" hreflang="es">Español</a>
+  <a class="btn ghost sm" href="/" lang="es" hreflang="es-CO">Español</a>
   <a class="btn ghost sm" href="https://wa.me/573152209905?text=Hola%20Andrei%2C%20quiero%20pedir%20Ganocafe%203%20en%201" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a>
 </header>
 
@@ -434,7 +434,7 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
   <div class="who">
     <b>El Mejor Café · Andrei Navas</b>
     <p>Jaime Andrei Navas Meléndez is an independent Gano Excel distributor in Colombia. This is an independent website, not the official Gano Excel website. Purchases, payment, prices, availability and shipping are handled by the Gano Excel Colombia store. Verify product information on its official label.</p>
-    <p class="secondary-link">Interested in becoming an independent distributor? Explore Gano Excel Colombia enrollment options and review applicable requirements, prices and benefits. <a href="/afiliacion.html">Enroll now</a>.</p>
+    <p class="secondary-link">Interested in becoming an independent distributor? Explore Gano Excel Colombia enrollment options and review applicable requirements, prices and benefits. <a href="/afiliacion-en.html">Enroll now</a>.</p>
     <div class="meta">Made in Colombia · 2026</div>
   </div>
 </footer>
@@ -471,7 +471,9 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
       return;
     }
 
-    // Detect the browser language once per tab session; never bounce between pages.
+    // Automatic browser-language routing is limited to the root homepage.
+    // Keep explicit language URLs crawlable and let visitors switch manually.
+    if (path !== '/' && path !== '/index.html') return;
     if (sessionStorage.getItem(autoKey) === '1') return;
     var browserLanguage = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
     var detected = browserLanguage.indexOf('en') === 0 ? 'en' :
