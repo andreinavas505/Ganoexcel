@@ -65,4 +65,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/luvoco-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/luvoco.html"/>
   </url>
+  <url>
+    <loc>https://elmejorcafe.store/productos.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
+    <image:image>
+      <image:loc>https://www.ganoexcel.com.co/wp-content/uploads/2024/02/ganocafe3en1-1-1024x1024.jpg</image:loc>
+    </image:image>
+  </url>
 </urlset>
