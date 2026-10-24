@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://elmejorcafe.store/</loc>
     <lastmod>2026-10-23</lastmod>
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/index-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/"/>
-    <image:image>
-      <image:loc>https://elmejorcafe.store/og-ganocafe-3-en-1.jpg</image:loc>
-    </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://elmejorcafe.store/ganocafe-3-en-1-poster.jpg</video:thumbnail_loc>
-      <video:title>Cómo preparar Ganocafe 3 en 1</video:title>
-      <video:description>Video de preparación de Ganocafe 3 en 1: se abre un sobre, se agrega agua caliente y se mezcla la bebida.</video:description>
-      <video:content_loc>https://elmejorcafe.store/ganocafe-3-en-1-preparacion.mp4</video:content_loc>
-      <video:duration>4</video:duration>
-    </video:video>
   </url>
   <url>
     <loc>https://elmejorcafe.store/index-en.html</loc>
@@ -26,30 +14,20 @@
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/index-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/"/>
-    <image:image>
-      <image:loc>https://elmejorcafe.store/og-ganocafe-3-en-1.jpg</image:loc>
-    </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://elmejorcafe.store/ganocafe-3-en-1-poster.jpg</video:thumbnail_loc>
-      <video:title>How to prepare Ganocafe 3-in-1</video:title>
-      <video:description>How to prepare Ganocafe 3-in-1: open a sachet, add hot water and stir the drink.</video:description>
-      <video:content_loc>https://elmejorcafe.store/ganocafe-3-en-1-preparacion.mp4</video:content_loc>
-      <video:duration>4</video:duration>
-    </video:video>
   </url>
   <url>
-    <loc>https://elmejorcafe.store/afiliacion.html</loc>
+    <loc>https://elmejorcafe.store/productos.html</loc>
     <lastmod>2026-10-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/productos-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
   </url>
   <url>
-    <loc>https://elmejorcafe.store/afiliacion-en.html</loc>
+    <loc>https://elmejorcafe.store/productos-en.html</loc>
     <lastmod>2026-10-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/productos-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
   </url>
   <url>
     <loc>https://elmejorcafe.store/luvoco.html</loc>
@@ -66,45 +44,31 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/luvoco.html"/>
   </url>
   <url>
-    <loc>https://elmejorcafe.store/productos.html</loc>
-    <lastmod>2026-10-23</lastmod>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
-    <image:image>
-      <image:loc>https://www.ganoexcel.com.co/wp-content/uploads/2024/02/ganocafe3en1-1-1024x1024.jpg</image:loc>
-    </image:image>
-      <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/productos-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
-  </url>
-  <url>
     <loc>https://elmejorcafe.store/reskin.html</loc>
     <lastmod>2026-10-23</lastmod>
-    <image:image><image:loc>https://elmejorcafe.store/reskin-ingredientes.svg</image:loc></image:image>
-      <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/reskin.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/reskin-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/reskin.html"/>
-  </url>
-  <url>
-    <loc>https://elmejorcafe.store/productos.html</loc>
-    <lastmod>2026-10-23</lastmod>
-      <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/productos.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/productos-en.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/productos.html"/>
-  </url>
-  <url>
-    <loc>https://elmejorcafe.store/productos-en.html</loc>
-    <lastmod>2026-10-23</lastmod>
-  </url>
-  <url>
-    <loc>https://elmejorcafe.store/reskin.html</loc>
-    <lastmod>2026-10-23</lastmod>
-      <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/reskin.html"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/reskin.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/reskin-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/reskin.html"/>
   </url>
   <url>
     <loc>https://elmejorcafe.store/reskin-en.html</loc>
     <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/reskin.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/reskin-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/reskin.html"/>
+  </url>
+  <url>
+    <loc>https://elmejorcafe.store/afiliacion.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
+  </url>
+  <url>
+    <loc>https://elmejorcafe.store/afiliacion-en.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
   </url>
 </urlset>
