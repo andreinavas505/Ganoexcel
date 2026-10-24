@@ -58,28 +58,10 @@
 @media(max-width:760px){.country-grid{grid-template-columns:1fr}.country-card{min-height:88px;padding:18px}.country-card strong{font-size:22px}}
 
 </style>
-<script>
-(function () {
-  try {
-    var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-    var wantsEnglish = browserLang.indexOf('en') === 0;
-    var wantsSpanish = browserLang.indexOf('es') === 0;
-    var currentEnglish = true;
-    var key = 'elmejorcafe-language-choice';
-    if (sessionStorage.getItem(key) === 'manual') return;
-    var target = null;
-    if (wantsEnglish && !currentEnglish) target = '/afiliacion-en.html';
-    else if (wantsSpanish && currentEnglish) target = '/afiliacion.html';
-    if (target) {
-      sessionStorage.setItem(key, 'auto');
-      location.replace(target);
-    }
-  } catch (e) {}
-})();
-</script>
+
 </head>
 <body>
-<a class="skip" href="#contenido" style="position:absolute;left:-999px">Saltar al contenido</a>
+<a class="skip" href="#contenido" style="position:absolute;left:-999px">Skip to content</a>
 <header class="top wrap">
   <a class="brand" href="/" aria-label="El Mejor Café, página principal"><b>El Mejor Café</b><span>Independent guide · International</span></a>
   <a class="btn ghost lang-switch" href="/afiliacion.html" lang="es" hreflang="es">Español</a>
@@ -97,9 +79,9 @@
     <div class="kick">Before you register</div><h2>How to start your <em>enrollment</em></h2>
     <p class="intro">Registration options vary by country. Use the official portal for your market and confirm current details during the process.</p>
     <div class="grid">
-      <article class="item"><div class="num">STEP 01</div><h3>Review your options</h3><p>Consulta los paquetes de inscripción o las opciones de kit disponibles. Verifica qué incluye cada alternativa y si requiere una compra inicial.</p></article>
-      <article class="item"><div class="num">STEP 02</div><h3>Review the requirements</h3><p>Revisa el contrato, las políticas y los documentos solicitados. El portal oficial de Colombia indica que el proceso contempla un contrato de mercadeo multinivel y documentación de identidad.</p></article>
-      <article class="item"><div class="num">STEP 03</div><h3>Confirm the total cost</h3><p>Antes de pagar, comprueba el precio de los productos seleccionados, impuestos, envío y valor total. Las cantidades dependen de la opción que elijas y de las condiciones vigentes.</p></article>
+      <article class="item"><div class="num">STEP 01</div><h3>Review your options</h3><p>Review the available enrollment packages or starter kits. Check what each option includes and whether an initial purchase is required.</p></article>
+      <article class="item"><div class="num">STEP 02</div><h3>Review the requirements</h3><p>Review the contract, policies and required documents. The official Colombia portal indicates that the process includes a multi-level marketing agreement and identity documentation.</p></article>
+      <article class="item"><div class="num">STEP 03</div><h3>Confirm the total cost</h3><p>Before paying, check the selected products' price, taxes, shipping and total cost. Amounts depend on the option you choose and current terms.</p></article>
     </div>
   </section>
   <section class="wrap" id="comprar-con-descuento">
@@ -115,8 +97,8 @@
   <section class="wrap">
     <div class="kick">Decide con información</div><h2>What to check before enrolling</h2>
     <div class="bodycopy" style="max-width:850px;margin-top:24px">
-      <ul class="checklist"><li>Qué incluye el paquete o kit que estás considerando.</li><li>Cuánto debes pagar al inicio, incluyendo impuestos y envío.</li><li>Qué documentos y pasos requiere el contrato.</li><li>Cuáles son las reglas actuales de compra, devolución, recompensas y participación.</li><li>Qué condiciones aplican a cualquier compensación o actividad comercial.</li></ul>
-      <p>No hay garantía de ingresos por afiliarse o vender productos. Los resultados comerciales, si los hay, dependen de múltiples factores y de las políticas aplicables. No tomes una decisión basándote en promesas de ganancias garantizadas.</p>
+      <ul class="checklist"><li>What is included in the package or starter kit you are considering.</li><li>How much you must pay upfront, including taxes and shipping.</li><li>Which documents and steps the agreement requires.</li><li>The current rules for purchases, returns, rewards and participation.</li><li>The terms that apply to any compensation or business activity.</li></ul>
+      <p>Enrollment or product sales do not guarantee income. Any business results depend on many factors and applicable policies. Do not make decisions based on promises of guaranteed earnings.</p>
     </div>
     <div class="acts"><a class="btn gold" href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Check official enrollment ↗</a></div>
   </section>
@@ -138,19 +120,19 @@
   <section class="wrap">
     <div class="kick">Frequently asked questions</div><h2>Common enrollment questions</h2>
     <div class="faq">
-      <details><summary>Where do I enroll?</summary><div class="answer">El trámite se inicia en el portal de Gano Excel Colombia. Verifica que estés en el sitio oficial antes de compartir datos personales o realizar pagos.</div></details>
-      <details><summary>How much does enrollment cost?</summary><div class="answer">El costo depende de la modalidad o kit disponible y de las condiciones vigentes. Consulta el precio, los productos incluidos, impuestos, envío y total directamente en el registro oficial antes de pagar.</div></details>
-      <details><summary>Can I buy Gano Excel products at a discount?</summary><div class="answer">Algunas modalidades de afiliación pueden dar acceso a precios de afiliado o mayoristas. Los requisitos, productos elegibles y posibles compras mínimas dependen de las políticas y la modalidad vigentes. Confírmalo en el portal oficial antes de registrarte; no asumas que el descuento aplica a todos los productos.</div></details>
+      <details><summary>Where do I enroll?</summary><div class="answer">The process starts on the Gano Excel Colombia portal. Verify that you are on the official website before sharing personal information or making payments.</div></details>
+      <details><summary>How much does enrollment cost?</summary><div class="answer">The cost depends on the available enrollment option or kit and current terms. Check the price, included products, taxes, shipping and total directly on the official registration site before paying.</div></details>
+      <details><summary>Can I buy Gano Excel products at a discount?</summary><div class="answer">Some enrollment options may provide access to member or wholesale prices. Requirements, eligible products and minimum purchases depend on current policies and enrollment type. Confirm this on the official portal; do not assume discounts apply to every product.</div></details>
       <details><summary>Do I need to enroll to buy Ganocafe 3-in-1?</summary><div class="answer">No des por hecho que necesitas afiliarte para una compra normal. Compara el precio de compra directa con el costo total de cualquier afiliación y verifica las condiciones actuales. Puedes consultar el producto en nuestra <a href="/">página de Ganocafe 3 en 1</a>.</div></details>
-      <details><summary>Which documents may be required?</summary><div class="answer">La información pública del registro colombiano indica que se debe revisar y suscribir el contrato correspondiente y aportar documentación de identidad. Confirma los requisitos completos y actualizados en el portal oficial.</div></details>
-      <details><summary>Does enrollment guarantee income?</summary><div class="answer">No. La afiliación no garantiza ingresos ni resultados comerciales. Lee el plan de compensación y las políticas oficiales, y evalúa los costos y condiciones antes de participar.</div></details>
+      <details><summary>Which documents may be required?</summary><div class="answer">Public information on the Colombian registration portal indicates that applicants must review and sign the relevant agreement and provide identity documents. Confirm the complete, current requirements on the official portal.</div></details>
+      <details><summary>Does enrollment guarantee income?</summary><div class="answer">No. Enrollment does not guarantee income or business results. Read the compensation plan and official policies, and assess the costs and terms before participating.</div></details>
       <details><summary>Can I try the coffee first?</summary><div class="answer">Sí. Puedes revisar la información sobre Ganocafe 3 en 1 en nuestra <a href="/">página del producto</a> antes de decidir si quieres comprar o explorar la afiliación.</div></details>
     </div>
   </section>
   <section class="cta">
-    <div class="wrap"><div class="kick">Siguiente paso</div><h2>¿Quieres afiliarte o consultar precios para afiliados?</h2><p>Revisa los paquetes, productos incluidos, requisitos y condiciones vigentes directamente con Gano Excel Colombia. Compara el costo total antes de completar el registro. Si tienes preguntas sobre los pasos o quieres orientación antes de inscribirte, escríbeme por WhatsApp.</p><div class="acts"><a class="btn gold" href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Start enrollment ↗</a><a class="btn ghost" href="https://wa.me/573152209905?text=Hi%20Andrei%2C%20I%20have%20a%20question%20about%20Gano%20Excel%20enrollment." target="_blank" rel="noopener noreferrer">Ask questions on WhatsApp ↗</a><a class="btn ghost" href="/">Back to Ganocafe 3-in-1</a></div></div>
+    <div class="wrap"><div class="kick">Siguiente paso</div><h2>¿Quieres afiliarte o consultar precios para afiliados?</h2><p>Review packages, included products, requirements and current terms directly with Gano Excel Colombia. Compare the total cost before registering. If you have questions or would like guidance before enrolling, message me on WhatsApp.</p><div class="acts"><a class="btn gold" href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Start enrollment ↗</a><a class="btn ghost" href="https://wa.me/573152209905?text=Hi%20Andrei%2C%20I%20have%20a%20question%20about%20Gano%20Excel%20enrollment." target="_blank" rel="noopener noreferrer">Ask questions on WhatsApp ↗</a><a class="btn ghost" href="/">Back to Ganocafe 3-in-1</a></div></div>
   </section>
 </main>
-<footer><div class="wrap"><p><strong>El Mejor Café · Andrei Navas</strong></p><p>Contenido informativo independiente. Esta página no es propiedad ni representa oficialmente a Gano Excel S.A. Los nombres y marcas pertenecen a sus respectivos titulares. Los precios, requisitos, paquetes, políticas y disponibilidad pueden cambiar; consulta siempre la información oficial.</p><div class="footlinks"><a href="/">Shop Ganocafe 3-in-1</a><a href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Official enrollment portal ↗</a></div></div></footer>
+<footer><div class="wrap"><p><strong>El Mejor Café · Andrei Navas</strong></p><p>Independent informational content. This page is not owned by or an official representative of Gano Excel S.A. Names and trademarks belong to their respective owners. Prices, requirements, packages, policies and availability may change; always check official information.</p><div class="footlinks"><a href="/">Shop Ganocafe 3-in-1</a><a href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Official enrollment portal ↗</a></div></div></footer>
 </body>
 </html>
