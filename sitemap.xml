@@ -51,4 +51,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
   </url>
+  <url>
+    <loc>https://elmejorcafe.store/luvoco.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/luvoco.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/luvoco-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/luvoco.html"/>
+  </url>
+  <url>
+    <loc>https://elmejorcafe.store/luvoco-en.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/luvoco.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/luvoco-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/luvoco.html"/>
+  </url>
 </urlset>
