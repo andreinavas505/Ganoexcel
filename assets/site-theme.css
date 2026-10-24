@@ -32,3 +32,9 @@ body{background:var(--emc-bg)!important;color:var(--emc-ink)!important}
 .global-nav~main .video-fallback{pointer-events:none}
 @media(max-width:720px){.global-nav~main .grid,.global-nav~main .benefits{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.global-nav~main .grid,.global-nav~main .benefits{grid-template-columns:1fr}.global-nav~main .hero{padding-top:30px}}
+
+
+/* Unified typography across every page and language */
+body{font-family:"Manrope",Arial,sans-serif!important;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.section h2,.section h3{font-family:"Fraunces",Georgia,"Times New Roman",serif!important}
+.global-nav,.global-nav a,.global-brand,.global-links{font-family:"Manrope",Arial,sans-serif!important}
