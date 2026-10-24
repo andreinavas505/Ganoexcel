@@ -7,13 +7,32 @@
     <loc>https://elmejorcafe.store/</loc>
     <lastmod>2026-10-23</lastmod>
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/"/>
     <image:image>
       <image:loc>https://elmejorcafe.store/og-ganocafe-3-en-1.jpg</image:loc>
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://elmejorcafe.store/ganocafe-3-en-1-poster.jpg</video:thumbnail_loc>
       <video:title>Cómo preparar Ganocafe 3 en 1</video:title>
-      <video:description>Una persona abre un sobre de Ganocafe 3 en 1, le agrega agua caliente y disfruta su café.</video:description>
+      <video:description>Video de preparación de Ganocafe 3 en 1: se abre un sobre, se agrega agua caliente y se mezcla la bebida.</video:description>
+      <video:content_loc>https://elmejorcafe.store/ganocafe-3-en-1-preparacion.mp4</video:content_loc>
+      <video:duration>4</video:duration>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://elmejorcafe.store/index-en.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/index-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/"/>
+    <image:image>
+      <image:loc>https://elmejorcafe.store/og-ganocafe-3-en-1.jpg</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://elmejorcafe.store/ganocafe-3-en-1-poster.jpg</video:thumbnail_loc>
+      <video:title>How to prepare Ganocafe 3-in-1</video:title>
+      <video:description>How to prepare Ganocafe 3-in-1: open a sachet, add hot water and stir the drink.</video:description>
       <video:content_loc>https://elmejorcafe.store/ganocafe-3-en-1-preparacion.mp4</video:content_loc>
       <video:duration>4</video:duration>
     </video:video>
@@ -22,5 +41,14 @@
     <loc>https://elmejorcafe.store/afiliacion.html</loc>
     <lastmod>2026-10-23</lastmod>
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
+  </url>
+  <url>
+    <loc>https://elmejorcafe.store/afiliacion-en.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://elmejorcafe.store/afiliacion.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elmejorcafe.store/afiliacion-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://elmejorcafe.store/afiliacion.html"/>
   </url>
 </urlset>
