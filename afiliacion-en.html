@@ -130,10 +130,10 @@
     </div>
   </section>
   <section class="cta">
-    <div class="wrap"><div class="kick">Siguiente paso</div><h2>¿Quieres afiliarte o consultar precios para afiliados?</h2><p>Review packages, included products, requirements and current terms directly with Gano Excel Colombia. Compare the total cost before registering. If you have questions or would like guidance before enrolling, message me on WhatsApp.</p><div class="acts"><a class="btn gold" href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Start enrollment ↗</a><a class="btn ghost" href="https://wa.me/573152209905?text=Hi%20Andrei%2C%20I%20have%20a%20question%20about%20Gano%20Excel%20enrollment." target="_blank" rel="noopener noreferrer">Ask questions on WhatsApp ↗</a><a class="btn ghost" href="/">Back to Ganocafe 3-in-1</a></div></div>
+    <div class="wrap"><div class="kick">Siguiente paso</div><h2>¿Quieres afiliarte o consultar precios para afiliados?</h2><p>Review packages, included products, requirements and current terms directly with Gano Excel Colombia. Compare the total cost before registering. If you have questions or would like guidance before enrolling, message me on WhatsApp.</p><div class="acts"><a class="btn gold" href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Start enrollment ↗</a><a class="btn ghost" href="https://wa.me/573152209905?text=Hi%20Andrei%2C%20I%20have%20a%20question%20about%20Gano%20Excel%20enrollment." target="_blank" rel="noopener noreferrer">Ask questions on WhatsApp ↗</a><a class="btn ghost" href="/index-en.html">Back to Ganocafe 3-in-1</a></div></div>
   </section>
 </main>
-<footer><div class="wrap"><p><strong>El Mejor Café · Andrei Navas</strong></p><p>Independent informational content. This page is not owned by or an official representative of Gano Excel S.A. Names and trademarks belong to their respective owners. Prices, requirements, packages, policies and availability may change; always check official information.</p><div class="footlinks"><a href="/">Shop Ganocafe 3-in-1</a><a href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Official enrollment portal ↗</a></div></div></footer>
+<footer><div class="wrap"><p><strong>El Mejor Café · Andrei Navas</strong></p><p>Independent informational content. This page is not owned by or an official representative of Gano Excel S.A. Names and trademarks belong to their respective owners. Prices, requirements, packages, policies and availability may change; always check official information.</p><div class="footlinks"><a href="/index-en.html">Shop Ganocafe 3-in-1</a><a href="https://col.ganoexcel.com/ventas" target="_blank" rel="noopener noreferrer">Official enrollment portal ↗</a></div></div></footer>
 
 <script>
 (function () {
@@ -167,7 +167,9 @@
       return;
     }
 
-    // Detect the browser language once per tab session; never bounce between pages.
+    // Automatic browser-language routing is limited to the root homepage.
+    // Keep explicit language URLs crawlable and let visitors switch manually.
+    if (path !== '/' && path !== '/index.html') return;
     if (sessionStorage.getItem(autoKey) === '1') return;
     var browserLanguage = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
     var detected = browserLanguage.indexOf('en') === 0 ? 'en' :
