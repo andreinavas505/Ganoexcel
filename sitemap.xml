@@ -74,4 +74,9 @@
       <image:loc>https://www.ganoexcel.com.co/wp-content/uploads/2024/02/ganocafe3en1-1-1024x1024.jpg</image:loc>
     </image:image>
   </url>
+  <url>
+    <loc>https://elmejorcafe.store/reskin.html</loc>
+    <lastmod>2026-10-23</lastmod>
+    <image:image><image:loc>https://elmejorcafe.store/reskin-ingredientes.svg</image:loc></image:image>
+  </url>
 </urlset>
