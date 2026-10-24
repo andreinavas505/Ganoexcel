@@ -167,7 +167,9 @@
       return;
     }
 
-    // Detect the browser language once per tab session; never bounce between pages.
+    // Automatic browser-language routing is limited to the root homepage.
+    // Keep explicit language URLs crawlable and let visitors switch manually.
+    if (path !== '/' && path !== '/index.html') return;
     if (sessionStorage.getItem(autoKey) === '1') return;
     var browserLanguage = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
     var detected = browserLanguage.indexOf('en') === 0 ? 'en' :
