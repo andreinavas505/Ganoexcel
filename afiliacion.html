@@ -58,25 +58,7 @@
 @media(max-width:760px){.country-grid{grid-template-columns:1fr}.country-card{min-height:88px;padding:18px}.country-card strong{font-size:22px}}
 
 </style>
-<script>
-(function () {
-  try {
-    var browserLang = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-    var wantsEnglish = browserLang.indexOf('en') === 0;
-    var wantsSpanish = browserLang.indexOf('es') === 0;
-    var currentEnglish = false;
-    var key = 'elmejorcafe-language-choice';
-    if (sessionStorage.getItem(key) === 'manual') return;
-    var target = null;
-    if (wantsEnglish && !currentEnglish) target = '/afiliacion-en.html';
-    else if (wantsSpanish && currentEnglish) target = '/afiliacion.html';
-    if (target) {
-      sessionStorage.setItem(key, 'auto');
-      location.replace(target);
-    }
-  } catch (e) {}
-})();
-</script>
+
 </head>
 <body>
 <a class="skip" href="#contenido" style="position:absolute;left:-999px">Saltar al contenido</a>
