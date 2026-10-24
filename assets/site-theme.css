@@ -1,0 +1,18 @@
+/* Shared design system — El Mejor Café */
+:root{--emc-bg:#130e0c;--emc-panel:#1d1512;--emc-panel2:#261c17;--emc-ink:#f1e9da;--emc-muted:#b8aa97;--emc-gold:#d9a84e;--emc-gold2:#ebcb8a;--emc-line:rgba(241,233,218,.14);--emc-radius:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{color:var(--emc-ink)}
+.global-nav{position:relative;z-index:20;background:rgba(19,14,12,.96);border-bottom:1px solid var(--emc-line);backdrop-filter:blur(12px);padding:0 max(4%,calc((100% - 1160px)/2));display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.global-nav .global-brand{color:var(--emc-ink);text-decoration:none;font-weight:850;letter-spacing:.04em;white-space:nowrap}
+.global-nav .global-brand span{color:var(--emc-gold)}
+.global-nav .global-links{display:flex;align-items:center;justify-content:flex-end;gap:clamp(10px,2vw,24px);flex-wrap:wrap}
+.global-nav a{color:var(--emc-muted);text-decoration:none;font-size:.91rem;font-weight:650;transition:color .18s ease}
+.global-nav a:hover,.global-nav a:focus-visible{color:var(--emc-gold2)}
+.global-nav .global-cta{color:#21170b;background:var(--emc-gold);padding:9px 14px;border-radius:999px}
+.global-nav .global-cta:hover{color:#130e0c;background:var(--emc-gold2)}
+img,video{max-width:100%}
+button,.btn{transition:transform .18s ease,background .18s ease,border-color .18s ease}
+button:hover,.btn:hover{transform:translateY(-1px)}
+:where(a,button,input,select,textarea):focus-visible{outline:2px solid var(--emc-gold2);outline-offset:3px}
+@media(max-width:680px){.global-nav{align-items:flex-start;flex-direction:column;gap:8px;padding:14px 4%;}.global-nav .global-links{justify-content:flex-start;gap:9px 16px;padding-bottom:4px}.global-nav a{font-size:.84rem}.global-nav .global-cta{padding:7px 11px}}
