@@ -385,97 +385,26 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
 <!-- El Mejor Café · GA4 conversion funnel v2 -->
 <script id="elmejorcafe-interactions-v1">
 (function () {
-  if (window.__elmejorcafeAnalyticsBound) return;
-  window.__elmejorcafeAnalyticsBound = true;
-
-  function send(name, params) {
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', name, Object.assign({
-        page_path: window.location.pathname,
-        page_title: document.title
-      }, params || {}));
-    }
-  }
-
-  function cleanLabel(node) {
-    return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '')
-      .replace(/\s+/g, ' ').trim().slice(0, 80);
-  }
-
-  function productForPath(path) {
-    if (/luvoco/i.test(path)) return { item_id: 'luvoco', item_name: 'Luvoco', item_category: 'Café y bebidas' };
-    if (/reskin/i.test(path)) return { item_id: 'reskine', item_name: 'Reskine', item_category: 'Bebidas y nutrición' };
-    if (/preparar-ganocafe/i.test(path)) return { item_id: 'ganocafe-3-en-1', item_name: 'Ganocafe 3 en 1', item_category: 'Café con Ganoderma' };
-    return null;
-  }
-
-  var path = window.location.pathname.toLowerCase();
-  if (/productos(?:-en)?\.html$/.test(path)) {
-    send('view_item_list', { item_list_id: 'catalogo', item_list_name: 'Catálogo de productos' });
-  }
-  var product = productForPath(path);
-  if (product) {
-    send('view_item', {
-      currency: 'COP',
-      value: 0,
-      items: [Object.assign({ price: 0, quantity: 1 }, product)]
-    });
-  }
-
-  document.addEventListener('click', function (event) {
-    var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
-    if (!node) return;
-    var label = cleanLabel(node);
-    var href = node.getAttribute('href') || '';
-    var url;
-    try { url = href ? new URL(href, window.location.href) : null; } catch (_) { url = null; }
-    var host = url ? url.hostname.toLowerCase() : '';
-    var targetPath = url ? url.pathname.toLowerCase() : '';
-    var isWhatsApp = host === 'wa.me' || host === 'api.whatsapp.com' || host.endsWith('.whatsapp.com');
-    var isOfficialStore = host.includes('ganoexcel.com');
-    var isExternal = url && url.origin !== window.location.origin && !isWhatsApp;
-    var selectedProduct = productForPath(targetPath);
-
-    if (selectedProduct && /productos(?:-en)?\.html$/.test(path)) {
-      send('select_item', {
-        item_list_id: 'catalogo',
-        item_list_name: 'Catálogo de productos',
-        items: [Object.assign({ quantity: 1 }, selectedProduct)]
-      });
-    }
-    if (isWhatsApp) {
-      send('whatsapp_click', { link_domain: host, link_text: label, link_type: 'contact' });
-      send('generate_lead', { currency: 'COP', value: 0, method: 'WhatsApp', lead_source: 'website', link_text: label });
-    } else if (isOfficialStore) {
-      send('official_store_click', { link_domain: host, link_text: label, link_type: 'purchase_or_offer' });
-    } else if (isExternal) {
-      send('outbound_click', { link_domain: host, link_text: label, link_type: 'external' });
-    }
-    if (node.matches('a,button,[role="button"]') &&
-        (node.classList.contains('btn') || node.classList.contains('button') ||
-         node.hasAttribute('data-cta') || /comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(label))) {
-      send('cta_click', {
-        cta_text: label,
-        cta_destination_type: isWhatsApp ? 'whatsapp' : (isOfficialStore ? 'official_store' : (isExternal ? 'external' : 'internal'))
-      });
-    }
-  }, true);
-
-  var sent = {};
-  function checkScroll() {
-    var doc = document.documentElement;
-    var max = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0) - window.innerHeight;
-    if (max <= 0) return;
-    var depth = Math.round((window.scrollY / max) * 100);
-    [50, 90].forEach(function (mark) {
-      if (depth >= mark && !sent[mark]) {
-        sent[mark] = true;
-        send('scroll_depth', { percent_scrolled: mark });
-      }
-    });
-  }
-  window.addEventListener('scroll', checkScroll, { passive: true });
-  window.addEventListener('load', checkScroll, { once: true });
+ if (window.__elmejorcafeAnalyticsBound) return; window.__elmejorcafeAnalyticsBound=true;
+ function send(n,p){if(typeof window.gtag==='function')window.gtag('event',n,Object.assign({page_path:location.pathname,page_title:document.title},p||{}));}
+ function label(n){return ((n&&(n.getAttribute('aria-label')||n.innerText||n.textContent))||'').replace(/\s+/g,' ').trim().slice(0,80);}
+ function item(p){if(/luvoco/i.test(p))return {item_id:'luvoco',item_name:'Luvoco',item_category:'Cafe y bebidas'};if(/reskin/i.test(p))return {item_id:'reskine',item_name:'Reskine',item_category:'Bebidas y nutricion'};if(/preparar-ganocafe/i.test(p))return {item_id:'ganocafe-3-en-1',item_name:'Ganocafe 3 en 1',item_category:'Cafe con Ganoderma'};return null;}
+ var path=location.pathname.toLowerCase(), catalog=/productos(?:-en)?\.html$/.test(path), current=item(path);
+ if(catalog)send('view_item_list',{item_list_id:'catalogo',item_list_name:'Catalogo de productos'});
+ if(current)send('view_item',{currency:'COP',items:[Object.assign({price:0,quantity:1},current)]});
+ document.addEventListener('click',function(e){
+  var n=e.target&&e.target.closest?e.target.closest('a,button,[role="button"]'):null;if(!n)return;
+  var t=label(n),h=n.getAttribute('href')||'',u;try{u=h?new URL(h,location.href):null;}catch(_){u=null;}
+  var host=u?u.hostname.toLowerCase():'',dest=u?u.pathname.toLowerCase():'';
+  var wa=host==='wa.me'||host==='api.whatsapp.com'||host.endsWith('.whatsapp.com'),store=host.includes('ganoexcel.com'),external=u&&u.origin!==location.origin,selected=item(dest);
+  if(catalog&&selected)send('select_item',{item_list_id:'catalogo',item_list_name:'Catalogo de productos',items:[Object.assign({quantity:1},selected)]});
+  if(wa){send('whatsapp_click',{link_domain:host,link_text:t,link_type:'contact'});send('generate_lead',{currency:'COP',method:'WhatsApp',lead_source:'website',link_text:t});}
+  else if(store)send('official_store_click',{link_domain:host,link_text:t,link_type:'purchase_or_offer'});
+  else if(external)send('outbound_click',{link_domain:host,link_text:t,link_type:'external'});
+  if(n.classList.contains('btn')||n.classList.contains('button')||n.hasAttribute('data-cta')||/comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(t))send('cta_click',{cta_text:t,cta_destination_type:wa?'whatsapp':store?'official_store':external?'external':'internal'});
+ },true);
+ var sent={};function scroll(){var d=document.documentElement,m=Math.max(d.scrollHeight,document.body?document.body.scrollHeight:0)-innerHeight;if(m<=0)return;var p=Math.round(scrollY/m*100);[50,90].forEach(function(x){if(p>=x&&!sent[x]){sent[x]=true;send('scroll_depth',{percent_scrolled:x});}});}
+ addEventListener('scroll',scroll,{passive:true});addEventListener('load',scroll,{once:true});
 })();
 </script>
 </body>
