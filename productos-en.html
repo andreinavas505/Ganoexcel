@@ -86,4 +86,66 @@
 <section class="wrap disclaimer"><strong>Important information</strong><p>This is an independent informational catalog, not the official Gano Excel Colombia website. Names and trademarks belong to their respective owners. Descriptions summarize publicly available manufacturer information and do not replace product labels. Availability, packaging, prices and terms may change; check the offers page before purchasing. Dietary supplements are not medicines and are not claimed to diagnose, treat, cure or prevent disease.</p><a class="btn" href="https://colombia.ganoexcel.com/ofertas" target="_blank" rel="sponsored noopener noreferrer">View all offers ↗</a><a class="btn alt" href="https://wa.me/573152209905?text=Hola%20Andrei%2C%20quiero%20informacion%20sobre%20los%20productos%20Gano%20Excel" target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a></section>
 </main>
 <footer class="wrap"><strong>El Mejor Café · Andrei Navas</strong><p>Independent distributor. Unofficial informational website. <a href="/">Back to home</a></p></footer>
+
+<!-- El Mejor Café · GA4 interaction tracking v1 -->
+<script id="elmejorcafe-interactions-v1">
+(function () {
+  if (window.__elmejorcafeAnalyticsBound) return;
+  window.__elmejorcafeAnalyticsBound = true;
+  function send(name, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, Object.assign({
+        page_path: window.location.pathname,
+        page_title: document.title
+      }, params || {}));
+    }
+  }
+  function cleanLabel(node) {
+    return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '')
+      .replace(/\\s+/g, ' ').trim().slice(0, 80);
+  }
+  document.addEventListener('click', function (event) {
+    var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
+    if (!node) return;
+    var label = cleanLabel(node);
+    var href = node.getAttribute('href') || '';
+    var url;
+    try { url = href ? new URL(href, window.location.href) : null; } catch (_) { url = null; }
+    var host = url ? url.hostname.toLowerCase() : '';
+    var isWhatsApp = host === 'wa.me' || host === 'api.whatsapp.com' || host.endsWith('.whatsapp.com');
+    var isOfficialStore = host.includes('ganoexcel.com');
+    var isExternal = url && url.origin !== window.location.origin && !isWhatsApp;
+    if (isWhatsApp) {
+      send('whatsapp_click', { link_domain: host, link_text: label, link_type: 'contact' });
+    } else if (isOfficialStore) {
+      send('official_store_click', { link_domain: host, link_text: label, link_type: 'purchase_or_offer' });
+    } else if (isExternal) {
+      send('outbound_click', { link_domain: host, link_text: label, link_type: 'external' });
+    }
+    if (node.matches('a,button,[role="button"]') &&
+        (node.classList.contains('btn') || node.classList.contains('button') ||
+         node.hasAttribute('data-cta') || /comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(label))) {
+      send('cta_click', {
+        cta_text: label,
+        cta_destination_type: isWhatsApp ? 'whatsapp' : (isOfficialStore ? 'official_store' : (isExternal ? 'external' : 'internal'))
+      });
+    }
+  }, true);
+  var sent = {};
+  function checkScroll() {
+    var doc = document.documentElement;
+    var max = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0) - window.innerHeight;
+    if (max <= 0) return;
+    var depth = Math.round((window.scrollY / max) * 100);
+    [50, 90].forEach(function (mark) {
+      if (depth >= mark && !sent[mark]) {
+        sent[mark] = true;
+        send('scroll_depth', { percent_scrolled: mark });
+      }
+    });
+  }
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  window.addEventListener('load', checkScroll, { once: true });
+})();
+</script>
 </body></html>
