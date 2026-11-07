@@ -397,7 +397,7 @@ footer .meta{font:12px var(--mono);letter-spacing:.1em;text-transform:uppercase;
   }
   function cleanLabel(node) {
     return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '')
-      .replace(/\\s+/g, ' ').trim().slice(0, 80);
+      .replace(/\s+/g, ' ').trim().slice(0, 80);
   }
   document.addEventListener('click', function (event) {
     var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
