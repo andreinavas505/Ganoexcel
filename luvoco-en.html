@@ -51,7 +51,7 @@
     }
   }
   function cleanLabel(node) {
-    return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '').replace(/\\s+/g, ' ').trim().slice(0, 80);
+    return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '').replace(/\s+/g, ' ').trim().slice(0, 80);
   }
   document.addEventListener('click', function (event) {
     var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
