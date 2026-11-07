@@ -50,11 +50,12 @@
 <section class="section"><div class="wrap"><p class="eyebrow">Tu próxima taza</p><h2>¿Suave, medio o fuerte?</h2><p>Explora las ofertas disponibles y confirma presentación, precio, disponibilidad y condiciones de entrega.</p><a class="btn" href="/ofertas/">Ver ofertas y disponibilidad ↗</a><a class="btn alt" href="https://wa.me/573152209905?text=Hola%20Andrei%2C%20quiero%20informacion%20sobre%20Luvoco" target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a></div></section>
 </main><footer class="wrap footer"><strong>El Mejor Café · Andrei Navas</strong><p>Contenido informativo independiente. Esta página no es propiedad ni representa oficialmente a Gano Excel S.A. Luvoco y las marcas relacionadas pertenecen a sus titulares. Consulta el etiquetado y las condiciones oficiales antes de comprar.</p><a href="/">Volver a la página principal</a></footer>
 
-<!-- El Mejor Café · GA4 interaction tracking v1 -->
+<!-- El Mejor Café · GA4 conversion funnel v2 -->
 <script id="elmejorcafe-interactions-v1">
 (function () {
   if (window.__elmejorcafeAnalyticsBound) return;
   window.__elmejorcafeAnalyticsBound = true;
+
   function send(name, params) {
     if (typeof window.gtag === 'function') {
       window.gtag('event', name, Object.assign({
@@ -63,10 +64,32 @@
       }, params || {}));
     }
   }
+
   function cleanLabel(node) {
     return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '')
       .replace(/\s+/g, ' ').trim().slice(0, 80);
   }
+
+  function productForPath(path) {
+    if (/luvoco/i.test(path)) return { item_id: 'luvoco', item_name: 'Luvoco', item_category: 'Café y bebidas' };
+    if (/reskin/i.test(path)) return { item_id: 'reskine', item_name: 'Reskine', item_category: 'Bebidas y nutrición' };
+    if (/preparar-ganocafe/i.test(path)) return { item_id: 'ganocafe-3-en-1', item_name: 'Ganocafe 3 en 1', item_category: 'Café con Ganoderma' };
+    return null;
+  }
+
+  var path = window.location.pathname.toLowerCase();
+  if (/productos(?:-en)?\.html$/.test(path)) {
+    send('view_item_list', { item_list_id: 'catalogo', item_list_name: 'Catálogo de productos' });
+  }
+  var product = productForPath(path);
+  if (product) {
+    send('view_item', {
+      currency: 'COP',
+      value: 0,
+      items: [Object.assign({ price: 0, quantity: 1 }, product)]
+    });
+  }
+
   document.addEventListener('click', function (event) {
     var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
     if (!node) return;
@@ -75,11 +98,22 @@
     var url;
     try { url = href ? new URL(href, window.location.href) : null; } catch (_) { url = null; }
     var host = url ? url.hostname.toLowerCase() : '';
+    var targetPath = url ? url.pathname.toLowerCase() : '';
     var isWhatsApp = host === 'wa.me' || host === 'api.whatsapp.com' || host.endsWith('.whatsapp.com');
     var isOfficialStore = host.includes('ganoexcel.com');
     var isExternal = url && url.origin !== window.location.origin && !isWhatsApp;
+    var selectedProduct = productForPath(targetPath);
+
+    if (selectedProduct && /productos(?:-en)?\.html$/.test(path)) {
+      send('select_item', {
+        item_list_id: 'catalogo',
+        item_list_name: 'Catálogo de productos',
+        items: [Object.assign({ quantity: 1 }, selectedProduct)]
+      });
+    }
     if (isWhatsApp) {
       send('whatsapp_click', { link_domain: host, link_text: label, link_type: 'contact' });
+      send('generate_lead', { currency: 'COP', value: 0, method: 'WhatsApp', lead_source: 'website', link_text: label });
     } else if (isOfficialStore) {
       send('official_store_click', { link_domain: host, link_text: label, link_type: 'purchase_or_offer' });
     } else if (isExternal) {
@@ -94,6 +128,7 @@
       });
     }
   }, true);
+
   var sent = {};
   function checkScroll() {
     var doc = document.documentElement;
