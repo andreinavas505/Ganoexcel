@@ -15,6 +15,15 @@ main{max-width:640px}h1{font-size:clamp(2rem,6vw,3.5rem)}p{color:#c6b8a5;line-he
 a{display:inline-block;background:#d9a84e;color:#130e0c;text-decoration:none;font-weight:800;border-radius:999px;padding:14px 24px}
 </style>
 <script>window.location.replace("https://col.ganoexcel.com/ofertas");</script>
-</head>
-<body><main><h1>Abriendo las ofertas oficiales</h1><p>Te estamos llevando a la tienda oficial de Gano Excel para consultar disponibilidad y comprar.</p><a href="https://col.ganoexcel.com/ofertas">Continuar a las ofertas ↗</a></main></body>
+<!-- Google Analytics 4 · El Mejor Café --><script async src="https://www.googletagmanager.com/gtag/js?id=G-S3Q5R17TKV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S3Q5R17TKV');</script></head>
+<body><main><h1>Abriendo las ofertas oficiales</h1><p>Te estamos llevando a la tienda oficial de Gano Excel para consultar disponibilidad y comprar.</p><a href="https://col.ganoexcel.com/ofertas">Continuar a las ofertas ↗</a></main><!-- GA4 interaction tracking · El Mejor Café -->
+<script id="elmejorcafe-interactions-v1">
+(function(){if(window.__elmejorcafeAnalyticsBound)return;window.__elmejorcafeAnalyticsBound=true;
+function send(n,p){if(typeof gtag==='function')gtag('event',n,Object.assign({page_path:location.pathname,page_title:document.title},p||{}));}
+function label(n){return ((n.getAttribute('aria-label')||n.innerText||n.textContent||'').replace(/\s+/g,' ').trim()).slice(0,80);}
+document.addEventListener('click',function(e){var n=e.target&&e.target.closest?e.target.closest('a,button,[role="button"]'):null;if(!n)return;var h=n.getAttribute('href')||'',u;try{u=h?new URL(h,location.href):null;}catch(_){u=null;}var host=u?u.hostname.toLowerCase():'',wa=host==='wa.me'||host==='api.whatsapp.com'||host.endsWith('.whatsapp.com'),store=host.includes('ganoexcel.com'),ext=u&&u.origin!==location.origin,t=label(n);
+if(wa)send('whatsapp_click',{link_domain:host,link_text:t,link_type:'contact'});else if(store)send('official_store_click',{link_domain:host,link_text:t,link_type:'purchase_or_offer'});else if(ext)send('outbound_click',{link_domain:host,link_text:t,link_type:'external'});
+if(n.classList.contains('btn')||n.classList.contains('button')||n.hasAttribute('data-cta')||/comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(t))send('cta_click',{cta_text:t,cta_destination_type:wa?'whatsapp':store?'official_store':ext?'external':'internal'});
+},true);var sent={};function scroll(){var d=document.documentElement,m=Math.max(d.scrollHeight,document.body?document.body.scrollHeight:0)-innerHeight;if(m<=0)return;var p=Math.round(scrollY/m*100);[50,90].forEach(function(x){if(p>=x&&!sent[x]){sent[x]=true;send('scroll_depth',{percent_scrolled:x});}});}addEventListener('scroll',scroll,{passive:true});addEventListener('load',scroll,{once:true});})();
+</script></body>
 </html>
