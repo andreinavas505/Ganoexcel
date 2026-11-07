@@ -52,7 +52,7 @@ body{background:radial-gradient(ellipse at 80% 0,#49321e 0,transparent 38%),#130
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,350;0,9..144,500;1,9..144,350&family=Manrope:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/site-theme.css?v=20261023-fonts">
-</head>
+<!-- Google Analytics 4 · El Mejor Café --><script async src="https://www.googletagmanager.com/gtag/js?id=G-S3Q5R17TKV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S3Q5R17TKV');</script></head>
 <body>
 <nav class="global-nav" aria-label="Main navigation"><a class="global-brand" href="/index-en.html" aria-label="El Mejor Café, home">EL MEJOR <span>CAFÉ</span></a><div class="global-links"><a href="/index-en.html">Home</a><a href="/productos-en.html">Catalog</a><a href="/reskin-en.html">Reskine</a><a href="/luvoco-en.html">Luvoco</a><a href="/afiliacion-en.html">Enrollment</a><a href="https://col.ganoexcel.com/ofertas" target="_blank" rel="noopener noreferrer">Official offers ↗</a><a class="global-cta" href="https://wa.me/573152209905" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="/reskin.html" lang="es-CO" hreflang="es-CO">ES</a></div></nav>
 <main>
@@ -95,5 +95,46 @@ body{background:radial-gradient(ellipse at 80% 0,#49321e 0,transparent 38%),#130
 <footer class="wrap footer"><strong>El Mejor Café · Andrei Navas</strong><p>Independent informational content. This page is not owned by or officially affiliated with Gano Excel S.A. All trademarks belong to their respective owners. Check the label, availability, price and sales terms before placing an order.</p><a href="/index-en.html">Back to homepage</a></footer>
 <script>
 
+</script>
+
+<!-- El Mejor Café · GA4 interaction tracking v1 -->
+<script id="elmejorcafe-interactions-v1">
+(function () {
+  if (window.__elmejorcafeAnalyticsBound) return;
+  window.__elmejorcafeAnalyticsBound = true;
+  function send(name, params) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, Object.assign({page_path: location.pathname, page_title: document.title}, params || {}));
+    }
+  }
+  function cleanLabel(node) {
+    return ((node && (node.getAttribute('aria-label') || node.innerText || node.textContent)) || '').replace(/\\s+/g, ' ').trim().slice(0, 80);
+  }
+  document.addEventListener('click', function (event) {
+    var node = event.target && event.target.closest ? event.target.closest('a,button,[role="button"]') : null;
+    if (!node) return;
+    var label = cleanLabel(node), href = node.getAttribute('href') || '', url;
+    try { url = href ? new URL(href, location.href) : null; } catch (_) { url = null; }
+    var host = url ? url.hostname.toLowerCase() : '';
+    var wa = host === 'wa.me' || host === 'api.whatsapp.com' || host.endsWith('.whatsapp.com');
+    var store = host.includes('ganoexcel.com');
+    var external = url && url.origin !== location.origin && !wa;
+    if (wa) send('whatsapp_click', {link_domain: host, link_text: label, link_type: 'contact'});
+    else if (store) send('official_store_click', {link_domain: host, link_text: label, link_type: 'purchase_or_offer'});
+    else if (external) send('outbound_click', {link_domain: host, link_text: label, link_type: 'external'});
+    if (node.matches('a,button,[role="button"]') && (node.classList.contains('btn') || node.classList.contains('button') || node.hasAttribute('data-cta') || /comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(label))) {
+      send('cta_click', {cta_text: label, cta_destination_type: wa ? 'whatsapp' : (store ? 'official_store' : (external ? 'external' : 'internal'))});
+    }
+  }, true);
+  var sent = {};
+  function checkScroll() {
+    var doc = document.documentElement, max = Math.max(doc.scrollHeight, document.body ? document.body.scrollHeight : 0) - innerHeight;
+    if (max <= 0) return;
+    var depth = Math.round((scrollY / max) * 100);
+    [50, 90].forEach(function (mark) { if (depth >= mark && !sent[mark]) { sent[mark] = true; send('scroll_depth', {percent_scrolled: mark}); } });
+  }
+  addEventListener('scroll', checkScroll, {passive: true});
+  addEventListener('load', checkScroll, {once: true});
+})();
 </script>
 </body></html>
