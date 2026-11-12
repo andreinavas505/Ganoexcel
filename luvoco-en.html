@@ -57,7 +57,7 @@
   var wa=host==='wa.me'||host==='api.whatsapp.com'||host.endsWith('.whatsapp.com'),store=host.includes('ganoexcel.com'),external=u&&u.origin!==location.origin,selected=item(dest);
   if(catalog&&selected)send('select_item',{item_list_id:'catalogo',item_list_name:'Catalogo de productos',items:[Object.assign({quantity:1},selected)]});
   if(wa){send('whatsapp_click',{link_domain:host,link_text:t,link_type:'contact'});send('generate_lead',{method:'WhatsApp',lead_source:'website',link_text:t});}
-  else if(store)send('official_store_click',{link_domain:host,link_text:t,link_type:'purchase_or_offer'});
+  else if(store){send('official_store_click',{link_domain:host,link_text:t,link_type:'purchase_or_offer'});send('store_purchase_intent',{link_domain:host,link_text:t,destination_url:u.href,intent_type:'official_store_outbound'});}
   else if(external)send('outbound_click',{link_domain:host,link_text:t,link_type:'external'});
   if(n.classList.contains('btn')||n.classList.contains('button')||n.hasAttribute('data-cta')||/comprar|pedir|oferta|contact|whatsapp|distribuidor|afili/i.test(t))send('cta_click',{cta_text:t,cta_destination_type:wa?'whatsapp':store?'official_store':external?'external':'internal'});
  },true);
